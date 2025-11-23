@@ -99,7 +99,7 @@ async function edit (_id, change) {
  * @returns {Promise<Object>}
  */
 async function destroy (_id) {
-  return await Product.deleteOne({ _id })
+  return await Product.deleteOne({_id})
 }
 
 module.exports = {
