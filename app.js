@@ -16,22 +16,24 @@ app.use(express.static(__dirname + '/public'))
 app.use(bodyParser.json())
 app.use(middleware.cors)
 
-// Register product routes
+// Register the routes
 app.get('/', api.handleRoot)
+
+// Products routes
 app.get('/products', api.listProducts)
 app.get('/products/:id', api.getProduct)
 app.post('/products', api.createProduct)
 app.put('/products/:id', api.editProduct)
 app.delete('/products/:id', api.deleteProduct)
 
-// Register order routes
+// Orders routes
 app.get('/orders', api.listOrders)
 app.get('/orders/:id', api.getOrder)
 app.post('/orders', api.createOrder)
 app.put('/orders/:id', api.editOrder)
 app.delete('/orders/:id', api.deleteOrder)
 
-// Register error handling middleware
+// Error handling middleware
 app.use(middleware.notFound)
 app.use(middleware.handleError)
 

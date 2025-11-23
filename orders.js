@@ -1,6 +1,7 @@
 // orders.js
 const cuid = require('cuid')
 const db = require('./db')
+const Product = require('./products')
 
 const Order = db.model('Order', {
   _id: { type: String, default: cuid },
@@ -98,7 +99,7 @@ async function edit (_id, change) {
  * @returns {Promise<Object>}
  */
 async function destroy (_id) {
-  return await Order.deleteOne({ _id })
+  return await Order.deleteOne({_id})
 }
 
 module.exports = {
